@@ -1,25 +1,12 @@
 // app/(tabs)/home.tsx
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
+    <View className="flex-1 justify-center items-center bg-gray-100">
+      <Text className="text-2xl font-bold mb-2">Home Screen</Text>
       <Text>Welcome to the Coffee Shop!</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-});

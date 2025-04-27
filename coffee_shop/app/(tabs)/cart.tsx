@@ -1,25 +1,11 @@
 // app/(tabs)/cart.tsx
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function CartScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Cart</Text>
+    <View className="flex-1 justify-center items-center bg-gray-100">
+      <Text className="text-2xl font-bold mb-2">Cart</Text>
       <Text>Order here...</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-});
