@@ -1,0 +1,160 @@
+{
+  "Carmel syrup": [
+    {
+      "product": "Latte",
+      "product_category": "Coffee",
+      "confidence": 0.37587006960556846
+    },
+    {
+      "product": "Espresso shot",
+      "product_category": "Coffee",
+      "confidence": 0.3712296983758701
+    },
+    {
+      "product": "Cappuccino",
+      "product_category": "Coffee",
+      "confidence": 0.3480278422273782
+    }
+  ],
+  "Cappuccino": [
+    {
+      "product": "Sugar Free Vanilla syrup",
+      "product_category": "Flavours",
+      "confidence": 0.32671480144404336
+    },
+    {
+      "product": "Chocolate syrup",
+      "product_category": "Flavours",
+      "confidence": 0.3068592057761733
+    },
+    {
+      "product": "Carmel syrup",
+      "product_category": "Flavours",
+      "confidence": 0.27075812274368233
+    },
+    {
+      "product": "Hazelnut syrup",
+      "product_category": "Flavours",
+      "confidence": 0.25270758122743686
+    }
+  ],
+  "Chocolate syrup": [
+    {
+      "product": "Cappuccino",
+      "product_category": "Coffee",
+      "confidence": 0.3881278538812785
+    },
+    {
+      "product": "Espresso shot",
+      "product_category": "Coffee",
+      "confidence": 0.3561643835616438
+    },
+    {
+      "product": "Latte",
+      "product_category": "Coffee",
+      "confidence": 0.3356164383561644
+    }
+  ],
+  "Hazelnut syrup": [
+    {
+      "product": "Espresso shot",
+      "product_category": "Coffee",
+      "confidence": 0.37244897959183676
+    },
+    {
+      "product": "Latte",
+      "product_category": "Coffee",
+      "confidence": 0.36989795918367346
+    },
+    {
+      "product": "Cappuccino",
+      "product_category": "Coffee",
+      "confidence": 0.35714285714285715
+    }
+  ],
+  "Sugar Free Vanilla syrup": [
+    {
+      "product": "Cappuccino",
+      "product_category": "Coffee",
+      "confidence": 0.3978021978021978
+    },
+    {
+      "product": "Latte",
+      "product_category": "Coffee",
+      "confidence": 0.3692307692307692
+    },
+    {
+      "product": "Espresso shot",
+      "product_category": "Coffee",
+      "confidence": 0.35604395604395606
+    }
+  ],
+  "Espresso shot": [
+    {
+      "product": "Sugar Free Vanilla syrup",
+      "product_category": "Flavours",
+      "confidence": 0.29670329670329676
+    },
+    {
+      "product": "Carmel syrup",
+      "product_category": "Flavours",
+      "confidence": 0.29304029304029305
+    },
+    {
+      "product": "Chocolate syrup",
+      "product_category": "Flavours",
+      "confidence": 0.28571428571428575
+    },
+    {
+      "product": "Hazelnut syrup",
+      "product_category": "Flavours",
+      "confidence": 0.26739926739926745
+    }
+  ],
+  "Latte": [
+    {
+      "product": "Sugar Free Vanilla syrup",
+      "product_category": "Flavours",
+      "confidence": 0.3043478260869565
+    },
+    {
+      "product": "Carmel syrup",
+      "product_category": "Flavours",
+      "confidence": 0.29347826086956524
+    },
+    {
+      "product": "Chocolate syrup",
+      "product_category": "Flavours",
+      "confidence": 0.266304347826087
+    },
+    {
+      "product": "Hazelnut syrup",
+      "product_category": "Flavours",
+      "confidence": 0.26268115942028986
+    },
+    {
+      "product": "Chocolate Croissant",
+      "product_category": "Bakery",
+      "confidence": 0.18478260869565216
+    },
+    {
+      "product": "Croissant",
+      "product_category": "Bakery",
+      "confidence": 0.17934782608695654
+    }
+  ],
+  "Chocolate Croissant": [
+    {
+      "product": "Latte",
+      "product_category": "Coffee",
+      "confidence": 0.31481481481481477
+    }
+  ],
+  "Croissant": [
+    {
+      "product": "Latte",
+      "product_category": "Coffee",
+      "confidence": 0.3574007220216607
+    }
+  ]
+}
