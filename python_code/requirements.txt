@@ -1,0 +1,4 @@
+pandas==2.2.3
+python-dotenv==1.0.1 
+mlxtend==0.23.1
+openai==1.50.2
