@@ -7,3 +7,7 @@
 
 #
 test_setup.py
+uploader_script.py
+
+# env
+*.env
