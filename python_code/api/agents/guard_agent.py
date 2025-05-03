@@ -45,14 +45,23 @@ class GuardAgent():
         
         return output
 
-    def postprocess(self,output):
-        output = json.loads(output)
+    def postprocess(self, output):
+        try:
+            output = json.loads(output)
+            dict_output = {
+                "role": "assistant",
+                "content": output["message"],
+                "memory": {
+                    "agent": "guard_agent",
+                    "guard_decision": output["decision"],
+                },
+            }
 
-        dict_output = {
-            "role": "assistant",
-            "content": output['message'],
-            "memory": {"agent":"guard_agent",
-                       "guard_decision": output['decision']
-                      }
-        }
+        except Exception as e:
+            dict_output = {
+                "role": "assistant",
+                "content": output,
+                "memory": {"agent": "guard_agent", "guard_decision": "not allowed"},
+            }
+
         return dict_output
