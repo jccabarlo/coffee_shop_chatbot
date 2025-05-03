@@ -1,20 +1,24 @@
-from dotenv import load_dotenv
-import os
 import json
+import os
 from copy import deepcopy
-from .utils import get_chatbot_response
+
+from dotenv import load_dotenv
 from openai import OpenAI
+
+from .utils import get_chatbot_response
+
 load_dotenv()
 
-class GuardAgent():
+
+class GuardAgent:
     def __init__(self):
         self.client = OpenAI(
             api_key=os.getenv("MODEL_API_KEY"),
             base_url=os.getenv("MODEL_BASE_URL"),
         )
         self.model_name = os.getenv("MODEL_NAME")
-    
-    def get_response(self,messages):
+
+    def get_response(self, messages):
         messages = deepcopy(messages)
 
         system_prompt = """
@@ -37,12 +41,14 @@ class GuardAgent():
             "message": leave the message empty if it's allowed, otherwise write "Sorry, I can't help with that. Can I help you with your order?"
             }
             """
-        
+
         input_messages = [{"role": "system", "content": system_prompt}] + messages[-3:]
 
-        chatbot_output = get_chatbot_response(self.client,self.model_name,input_messages)
+        chatbot_output = get_chatbot_response(
+            self.client, self.model_name, input_messages
+        )
         output = self.postprocess(chatbot_output)
-        
+
         return output
 
     def postprocess(self, output):
