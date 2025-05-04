@@ -1,25 +1,40 @@
 import os
+import pathlib
 from typing import Dict
 
-from agents import AgentProtocol, ClassificationAgent, DetailsAgent, GuardAgent
+from agents import (
+    AgentProtocol,
+    ClassificationAgent,
+    DetailsAgent,
+    GuardAgent,
+    RecommendationAgent,
+)
+
+folder_path = pathlib.Path(__file__).parent.resolve()
 
 
 def main():
     guard_agent = GuardAgent()
     classification_agent = ClassificationAgent()
-    # recommendation_agent = RecommendationAgent('recommendation_objects/apriori_recommendations.json',
-    #                                                 'recommendation_objects/popularity_recommendation.csv'
-    #                                                 )
+    recommendation_agent = RecommendationAgent(
+        os.path.join(
+            folder_path, "recommendation_objects/apriori_recommendations.json"
+        ),
+        os.path.join(
+            folder_path,
+            "recommendation_objects/popularity_recommendation.csv",
+        ),
+    )
     agent_dict: Dict[str, AgentProtocol] = {
         "details_agent": DetailsAgent(),
         # "order_taking_agent": OrderTakingAgent(recommendation_agent),
-        # "recommendation_agent": recommendation_agent
+        "recommendation_agent": recommendation_agent,
     }
 
     messages = []
     while True:
         # Display the chat history
-        # os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
         print("\n\nPrint Messages ...............")
         for message in messages:
