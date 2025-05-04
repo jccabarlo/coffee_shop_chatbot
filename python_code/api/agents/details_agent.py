@@ -21,7 +21,7 @@ class DetailsAgent:
             base_url=os.getenv("MODEL_BASE_URL"),
         )
         self.model_name = os.getenv("MODEL_NAME")
-        self.embedding_model = "models/embedding-gecko-001"  # This model produces 960-dimensional embeddings
+        self.embedding_model = self.model_name
         self.pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
         self.index_name = os.getenv("PINECONE_INDEX_NAME")
 
