@@ -13,14 +13,16 @@ def get_chatbot_response(client,model_name,messages,temperature=0):
     
     return response
 
-def get_embedding(embedding_client,model_name,text_input):
-    output = embedding_client.embeddings.create(input = text_input,model=model_name)
-    
+def get_embedding(embedding_client, model_name, text_input):
+    output = embedding_client.embeddings.create(
+        input = text_input,
+        model=model_name
+    )
     embedings = []
     for embedding_object in output.data:
         embedings.append(embedding_object.embedding)
 
-    return embedings
+    return embedings[0]  # Return just the embedding vector, not a list of one vector
 
 def double_check_json_output(client,model_name,json_string):
     prompt = f""" You will check this json string and correct any mistakes that will make it invalid. Then you will return the corrected json string. Nothing else. 
