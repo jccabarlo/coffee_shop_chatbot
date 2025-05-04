@@ -1,0 +1,4 @@
+pandas==2.2.3
+python-dotenv==1.0.1 
+openai==1.50.2
+pinecone==5.4.2
