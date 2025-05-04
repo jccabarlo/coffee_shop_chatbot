@@ -11,3 +11,6 @@ uploader_script.py
 
 # env
 *.env
+
+#
+__pycache__/
