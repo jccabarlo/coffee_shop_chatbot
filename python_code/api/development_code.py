@@ -8,6 +8,7 @@ from agents import (
     DetailsAgent,
     GuardAgent,
     RecommendationAgent,
+    OrderTakingAgent,
 )
 
 folder_path = pathlib.Path(__file__).parent.resolve()
@@ -27,14 +28,14 @@ def main():
     )
     agent_dict: Dict[str, AgentProtocol] = {
         "details_agent": DetailsAgent(),
-        # "order_taking_agent": OrderTakingAgent(recommendation_agent),
+        "order_taking_agent": OrderTakingAgent(recommendation_agent),
         "recommendation_agent": recommendation_agent,
     }
 
     messages = []
     while True:
         # Display the chat history
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system("cls" if os.name == "nt" else "clear")
 
         print("\n\nPrint Messages ...............")
         for message in messages:
