@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Image, ScrollView, TouchableOpacity } from 'react-native';
+
 import { Text } from '~/components/ui/text'; // Assuming Text component from react-native-reusables
 import { Button } from '~/components/ui/button'; // Assuming Button component from react-native-reusables
 // We'll need to import actual icons later or use a library
