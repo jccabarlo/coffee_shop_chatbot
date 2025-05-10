@@ -11,7 +11,7 @@ export default function OnboardingScreen() {
   return (
     <SafeAreaView className="flex-1">
       <ImageBackground
-        source={require("../assets/images/onboarding_image.png")}
+        source={require("../assets/images/onboarding.png")}
         className="flex-1"
         imageStyle={{
           transform: [{ scale: 1.2 }],
