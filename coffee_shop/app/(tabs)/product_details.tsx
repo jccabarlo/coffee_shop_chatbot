@@ -20,7 +20,7 @@ const ProductDetailsScreen = () => {
     description:
       'A cappuccino is an espresso-based coffee drink that originated in Italy and is traditionally prepared with steamed milk foam. Variations of the drink involve the use of cream instead of milk, using non-dairy milk substitutes and flavoring with cinnamon or chocolate powder.',
     price: '$ 4.53',
-    imageUri: 'https://via.placeholder.com/400x300.png?text=Product+Image', // Placeholder image
+    // imageUri: 'https://via.placeholder.com/400x300.png?text=Product+Image', // Placeholder image
   };
 
   return (
@@ -39,7 +39,7 @@ const ProductDetailsScreen = () => {
 
         {/* Product Image */}
         <Image
-          source={{ uri: product.imageUri }}
+          source={require('@/assets/images/cappuccino_product_detail.png')}
           className="w-full h-80"
           resizeMode="cover"
         />
