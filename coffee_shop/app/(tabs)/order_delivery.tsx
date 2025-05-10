@@ -26,11 +26,11 @@ export default function OrderDeliveryScreen() {
           {/* Top Navigation */}
           <View className="flex-row justify-between items-center px-6 pt-4">
             <TouchableOpacity className="bg-[#EDEDED] p-2.5 rounded-xl">
-              {/* <BackIcon width={20} height={20} /> */}
+              <BackIcon width={20} height={20} />
             </TouchableOpacity>
             <Text className="text-lg font-semibold text-[#242424]">Track Order</Text>
             <TouchableOpacity className="bg-[#EDEDED] p-2.5 rounded-xl">
-              {/* <GpsIcon width={20} height={20} /> */}
+              <GpsIcon width={20} height={20} />
             </TouchableOpacity>
           </View>
 
@@ -41,7 +41,7 @@ export default function OrderDeliveryScreen() {
 
           {/* Route Line */}
           <View className="absolute top-[20%] left-0 right-0 items-center justify-center w-full h-[30%]">
-            {/* <RouteLineImage width="80%" height="100%" preserveAspectRatio="xMidYMid meet" /> */}
+            <RouteLineImage width="80%" height="100%" preserveAspectRatio="xMidYMid meet" />
           </View>
 
 
@@ -87,7 +87,7 @@ export default function OrderDeliveryScreen() {
                 </View>
               </View>
               <TouchableOpacity className="p-3 border border-[#E3E3E3] rounded-xl">
-                {/* <CallIcon width={20} height={20} /> */}
+                <CallIcon width={20} height={20} />
               </TouchableOpacity>
             </View>
           </View>
