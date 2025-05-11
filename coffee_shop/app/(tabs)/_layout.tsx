@@ -1,6 +1,4 @@
 // app/(tabs)/_layout.tsx
-import { ThemeToggle } from "@/components/ThemeToggle";
-
 import { FontAwesome } from "@expo/vector-icons"; // Or any other icon library
 import { Tabs } from "expo-router";
 import React from "react";
@@ -18,7 +16,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: "blue",
-        // headerShown: false,
+        headerShown: false,
       }}
     >
       <Tabs.Screen
@@ -26,7 +24,6 @@ export default function TabLayout() {
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-          headerRight: () => <ThemeToggle />,
         }}
       />
       <Tabs.Screen
