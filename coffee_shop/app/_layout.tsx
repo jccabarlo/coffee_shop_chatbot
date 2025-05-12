@@ -8,6 +8,7 @@ import {
 } from "@react-navigation/native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { useFonts } from "expo-font";
 import React from "react";
 import { Platform } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -36,6 +37,14 @@ const useIsomorphicLayoutEffect =
     : React.useLayoutEffect;
 
 export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    "Author-Regular": require("../assets/fonts/Author-Regular.otf"),
+    "Author-Medium": require("../assets/fonts/Author-Medium.otf"),
+    "Author-Bold": require("../assets/fonts/Author-Bold.otf"),
+    "Author-Semibold": require("../assets/fonts/Author-Semibold.otf"),
+    "Author-Light": require("../assets/fonts/Author-Light.otf"),
+  });
+
   const hasMounted = React.useRef(false);
   const { colorScheme, isDarkColorScheme } = useColorScheme();
   const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false);
@@ -53,7 +62,7 @@ export default function RootLayout() {
     hasMounted.current = true;
   }, []);
 
-  if (!isColorSchemeLoaded) {
+  if (!isColorSchemeLoaded || !fontsLoaded) {
     return null;
   }
 
