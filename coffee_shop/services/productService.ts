@@ -1,6 +1,10 @@
-import { Product } from "../types/types";
+import supabaseClient from "@/config/supabase";
 
-export const fetchProducts = async (): Promise<Product[]> => {
-  const products: Product[] = [];
-  return products;
-};
+export async function getProducts() {
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  return data;
+}
