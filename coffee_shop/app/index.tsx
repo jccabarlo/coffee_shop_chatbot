@@ -29,7 +29,8 @@ export default function OnboardingScreen() {
           </Text>
           <Button
             className="bg-[#C67C4E] rounded-2xl w-full py-4 items-center justify-center"
-            onPress={() => router.replace("/(tabs)")}
+            // onPress={() => router.replace("/(tabs)")}
+            onPress={() => router.navigate("/products")}
           >
             <Text
               className="text-white text-center font-[Author-Semibold]"
