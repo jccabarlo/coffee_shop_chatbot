@@ -1,12 +1,14 @@
 // Products Interface
 export interface Product {
-    id: string;
-    category: string;
-    description: string;
+    id: number;
+    category: string | null;
+    description: string | null;
+    ingredients: string | null;
     image_url: string;
     name: string;
     price: number;
     rating: number;
+    quantity: number;
   }
 
 export interface ProductCategory {
