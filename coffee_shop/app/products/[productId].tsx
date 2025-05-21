@@ -6,10 +6,13 @@ import { SafeAreaView, View } from "react-native";
 import { Button } from "@/components/ui/button";
 import { getProduct } from "@/services/productService";
 import { Text } from "~/components/ui/text";
+import { useCartStore } from "@/store/cart";
 
 export default function ProductItemScreen() {
   const router = useRouter();
   const params = useLocalSearchParams();
+
+  const { addItemToCart, cart_items, orders_count, increase } = useCartStore();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["product_item", params.productId],
@@ -17,11 +20,11 @@ export default function ProductItemScreen() {
   });
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <Text className="text-center mt-[20%]">Loading...</Text>;
   }
 
   if (error) {
-    return <Text>Error: {error.message}</Text>;
+    return <Text className="text-center mt-[20%]">Error: {error.message}</Text>;
   }
 
   return (
@@ -35,9 +38,44 @@ export default function ProductItemScreen() {
         </Text>
       </View>
 
+      {Object.values(cart_items).map((item, index) => (
+        <View
+          key={index}
+          className="flex-row justify-between items-center p-4 bg-slate-100"
+        >
+          <Text className="font-[Author-Semibold] text-xl">{item.name}</Text>
+          <Text className="font-[Author-Regular] text-xl">{item.quantity}</Text>
+        </View>
+      ))}
+
+      <View className="flex-row justify-between items-center p-4 bg-slate-200">
+        <Text className="font-[Author-Semibold] text-xl">
+          Total Price: {data?.price}
+        </Text>
+        <Text className="font-[Author-Regular] text-xl">
+          {orders_count} orders
+        </Text>
+      </View>
+
       <View className="flex-row justify-center items-center gap-4">
-        <Button onPress={() => router.back()}>
+        <Button
+          onPress={() => {
+            increase(1);
+            router.back();
+          }}
+        >
           <Text>Go Back</Text>
+        </Button>
+        <Button
+          className="bg-blue-500 text-white"
+          onPress={() => {
+            if (!data) {
+              return;
+            }
+            addItemToCart(data);
+          }}
+        >
+          <Text>Add to Cart</Text>
         </Button>
       </View>
     </SafeAreaView>
