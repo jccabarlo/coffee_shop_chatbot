@@ -16,5 +16,8 @@
     "tailwind.config.js",
     "nativewind-env.d.ts",
     "svg.d.ts"
+  ],
+  "exclude": [
+    "app-example"
   ]
 }
