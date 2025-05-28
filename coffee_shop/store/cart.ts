@@ -1,10 +1,10 @@
-import { Product } from "@/types/types";
+import { CartItem, Product } from "@/types/types";
 import { create } from "zustand";
 
 interface CartState {
   orders_count: number;
   increase: (by: number) => void;
-  cart_items: Record<number, Product>;
+  cart_items: Record<number, CartItem>;
   addItemToCart: (item: Product) => void;
 }
 
