@@ -1,13 +1,19 @@
+import { Json } from "@/database.types";
+
 // Products Interface
 export interface Product {
     id: number;
     category: string | null;
     description: string | null;
-    ingredients: string | null;
-    image_url: string;
-    name: string;
-    price: number;
-    rating: number;
+    ingredients: Json | null;
+    image_url: string | null;
+    name: string | null;
+    price: number | null;
+    rating: number | null;
+  }
+
+  export interface CartItem extends Product { 
+    quantity: number;
   }
 
 export interface ProductCategory {
