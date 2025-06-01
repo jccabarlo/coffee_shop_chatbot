@@ -14,12 +14,12 @@ export default function ProductsListScreen() {
   });
 
   if (isLoading) {
-     return <Text className="text-center mt-[20%]">Loading...</Text>;
-   }
- 
-   if (error) {
-     return <Text className="text-center mt-[20%]">Error: {error.message}</Text>;
-   }
+    return <Text className="text-center mt-[20%]">Loading...</Text>;
+  }
+
+  if (error) {
+    return <Text className="text-center mt-[20%]">Error: {error.message}</Text>;
+  }
 
   return (
     <SafeAreaView className="flex-1 bg-slate-100">
